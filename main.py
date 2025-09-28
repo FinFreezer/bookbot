@@ -1,6 +1,7 @@
 from stats import count_words
 from stats import count_letter_usage
 from stats import sort_by_count
+import sys
 
 def get_book_text(path_to_file):
     #print("Enter file path:")
@@ -13,13 +14,17 @@ def get_book_text(path_to_file):
         lines = f.read()
         "".join(lines)
 
-    #print(lines)
     return lines
 
 def main():
+    print("Usage: python3 main.py <path_to_book>")
+
+    if ( len(sys.argv) != 2 ):
+        sys.exit(1)
+        
     usage_data = { }
     sorted_data = [ ]
-    location = "books/frankenstein.txt"
+    location = sys.argv[1]
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {location}...")
     
