@@ -17,11 +17,12 @@ def get_book_text(path_to_file):
     return lines
 
 def main():
-    print("Usage: python3 main.py <path_to_book>")
 
     if ( len(sys.argv) != 2 ):
-        sys.exit(1)
         
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
     usage_data = { }
     sorted_data = [ ]
     location = sys.argv[1]
